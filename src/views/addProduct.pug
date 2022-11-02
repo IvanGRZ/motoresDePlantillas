@@ -5,14 +5,24 @@ html(lang='en')
     meta(http-equiv='X-UA-Compatible' content='IE=edge')
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
     title Formulario para agregar productos
+    link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'
+    integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u' crossorigin='anonymous')
+    link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+    
   body
     a(href='/viewProducts') Ver lista
-    h3 Agregar Producto
-    form(action='/addProduct' method='POST')
-      label(for='title') Título:
-      input(type='text' name='title' required='')
-      label(for='price') Precio:
-      input(type='text' name='price' required='')
-      label(for='thumbnail') Thumbnail:
-      input(type='text' name='thumbnail' required='')
-      button(type='submit') Agregar producto a la lista
+  
+  body
+    .container
+      h3 Agregar Producto
+      form(action='/addProduct' method='POST')
+        .mb-3
+          label.form-label(for='title') Título:
+          input.form-control(type='text' name='title' required='')
+        .mb-3
+          label.form-label(for='price') Precio:
+          input.form-control(type='text' name='price' required='')
+        .mb-3
+          label.form-label(for='thumbnail') Thumbnail:
+          input.form-control(type='text' name='thumbnail' required='')
+        button.btn.btn-success(type='submit' style='margin-top: 10px;') Agregar producto a la lista

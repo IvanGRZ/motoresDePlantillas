@@ -1,22 +1,30 @@
 html 
     head
         title='Lista de productos'
+        link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'
+        integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u' crossorigin='anonymous')
+        link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')        
+  
     body
-        a(href='/Products') Agregar producto
-        h1='Lista de productos'
-        hr
-        if products.length>0
-            table 
-                tr 
-                    th='#ID'
-                    th='Nombre'
-                    th='Precio'
-                    th='Imagen'
-                for product in products
-                    tr
-                        td=product.id
-                        td=product.title
-                        td=product.price
-                        td=product.thumbnail
-        else 
-            h2='No hay productos :('
+        a(href='/Products') Agregar producto   
+
+    body
+        .container
+            h1='Lista de productos'
+            hr
+            if products.length>0
+                table.table 
+                    tr 
+                        th='ID'
+                        th='Nombre'
+                        th='Precio'
+                        th='Imagen'
+                    for product in products
+                        tr
+                            td=product.id
+                            td=product.title
+                            td=product.price
+                            td 
+                                img(src=product.thumbnail alt='' style='width:50px; height:auto;')
+            else 
+                h2='No hay productos :('

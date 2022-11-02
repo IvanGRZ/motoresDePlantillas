@@ -1,6 +1,5 @@
 import express  from 'express';
 import dotenv from 'dotenv';
-import router from './src/routes/index.js'
 
 const app = express();
 dotenv.config();
@@ -27,6 +26,10 @@ app.set('views', './src/views');
 app.set('view engine', 'pug');
 
 
+app.get('/', (_req, res) => {
+    res.render('index', {});
+});
+
 
 app.get('/Products', (_req, res) => {
     res.render('addProduct', {});
@@ -42,6 +45,7 @@ app.get('/products', (_req, res) => {
 });
 
 app.post('/addProduct', (req, res) => {
+    res.render('index', {});
     try{
         console.log(req.body)
 
